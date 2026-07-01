@@ -1,0 +1,9 @@
+{
+  "siteName": "افسانه‌ها",
+  "submitApiUrl": "",
+  "turnstileSiteKey": "",
+  "_help": {
+    "submitApiUrl": "آدرس Cloudflare Worker خودت را اینجا بگذار، مثلاً https://afsaneha-bot.USERNAME.workers.dev/submit — فقط همین یک جا را عوض کن.",
+    "turnstileSiteKey": "کلید عمومی Cloudflare Turnstile (کپچا). اختیاری اما توصیه‌شده."
+  }
+}

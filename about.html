@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>درباره — افسانه‌ها</title>
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/img/logo-amber.png" alt="افسانه‌ها">
+        <span>افسانه‌ها</span>
+      </a>
+      <div class="spacer"></div>
+      <button class="btn" id="themeBtn" title="theme">◐</button>
+    </div>
+  </header>
+  <main class="container">
+    <article class="article">
+      <h1>درباره‌ی افسانه‌ها</h1>
+      <p>«افسانه‌ها» یک آرشیو مردمی و متن‌باز برای جمع‌آوری افسانه‌ها و قصه‌های محلی ایران است. هدف این است که این میراث شفاهی پیش از فراموشی، به دست خودِ مردم ثبت و ماندگار شود.</p>
+      <blockquote>هر کسی می‌تواند افسانه‌ی شهر یا روستای خود را ثبت کند — حتی بدون داشتن حساب گیت‌هاب. نام نویسنده همیشه حفظ می‌شود.</blockquote>
+      <p>محتوای این مخزن با مجوز <b>CC BY 4.0</b> منتشر می‌شود. کد پروژه متن‌باز است.</p>
+      <p><a class="btn" href="index.html">← بازگشت</a></p>
+    </article>
+  </main>
+  <script type="module">
+    import { getTheme, setTheme } from "./assets/js/i18n.js";
+    setTheme(getTheme());
+    document.getElementById("themeBtn").addEventListener("click",()=>setTheme(getTheme()==="dark"?"light":"dark"));
+  </script>
+</body>
+</html>
