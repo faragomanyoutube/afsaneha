@@ -1,0 +1,71 @@
+backend:
+  name: github
+  repo: faragomanyoutube/afsaneha
+  branch: main
+  # OAuth provider REQUIRED for github backend on GitHub Pages (see admin/README.md):
+  # base_url: https://your-oauth-provider.example
+  # auth_endpoint: auth
+
+locale: fa
+media_folder: "legends/uploads"
+public_folder: "/legends/uploads"
+
+collections:
+  - name: legends
+    label: "افسانه‌ها"
+    label_singular: "افسانه"
+    folder: "legends"
+    path: "{{fields.province}}/{{fields.slug}}/fa"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{fields.slug}}"
+    fields:
+      - name: title
+        label: "عنوان (فارسی)"
+        widget: string
+      - name: slug
+        label: "شناسه (انگلیسی)"
+        widget: string
+        pattern: ["^[a-z0-9-]+$", "فقط حروف کوچک و خط تیره"]
+      - name: province
+        label: "استان"
+        widget: string
+      - name: city
+        label: "شهر/روستا"
+        widget: string
+        required: false
+      - name: dialect
+        label: "لهجه"
+        widget: string
+        required: false
+      - name: creature
+        label: "موجود/دسته"
+        widget: string
+        required: false
+      - name: tags
+        label: "برچسب‌ها"
+        widget: list
+        required: false
+      - name: author
+        label: "نام نویسنده"
+        widget: string
+      - name: created
+        label: "تاریخ"
+        widget: datetime
+        required: false
+        date_format: "YYYY-MM-DD"
+      - name: coordinates
+        label: "مختصات (lat, lon)"
+        widget: string
+        required: false
+        hint: "35.70, 51.42"
+      - name: audio
+        label: "فایل صوتی mp3"
+        widget: file
+        required: false
+      - name: body
+        label: "متن افسانه"
+        widget: markdown

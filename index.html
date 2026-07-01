@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>افسانه‌ها — گنجینه‌ی مردمی افسانه‌های ایران</title>
+<meta name="description" content="گنجینه‌ی مردمی افسانه‌ها و قصه‌های محلی ایران">
+<meta property="og:title" content="افسانه‌ها">
+<meta property="og:description" content="گنجینه‌ی مردمی افسانه‌های ایران">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#2a0e1f">
+<link rel="alternate" type="application/rss+xml" title="افسانه‌ها — RSS" href="feed.xml">
+<link rel="alternate" type="application/feed+json" title="افسانه‌ها — JSON Feed" href="feed.json">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="index.html"><img class="brand-logo logo" src="assets/img/logo-amber.png" alt="افسانه‌ها"><span data-i18n="site">افسانه‌ها</span></a>
+  <div class="spacer"></div>
+  <button class="btn" id="installBtn" data-i18n="installApp">نصب اپ</button>
+  <a class="btn" href="contribute.html" data-i18n="contribute">ثبت افسانه‌ی جدید</a>
+  <a class="btn" href="contributors.html" data-i18n="contributors">مشارکت‌کنندگان</a>
+  <a class="btn" href="about.html" data-i18n="about">درباره</a>
+  <button class="btn" id="langBtn">EN</button>
+  <button class="btn" id="themeBtn" title="theme">◐</button>
+</div></header>
+
+<main class="container">
+  <section class="hero">
+    <h1 data-i18n="site">افسانه‌ها</h1>
+    <p class="tagline" data-i18n="tagline"></p>
+    <p class="hero-text" data-i18n="heroText"></p>
+    <div class="hero-cta">
+      <a class="btn primary" href="contribute.html" data-i18n="contribute">ثبت افسانه‌ی جدید</a>
+      <a class="btn" href="#browse" data-i18n="browse">مرور افسانه‌ها</a>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="map-head">
+      <h2 data-i18n="mapTitle">نقشه‌ی افسانه‌ها</h2>
+      <span class="hint" data-i18n="mapHint">روی هر استان بزن</span>
+    </div>
+    <div class="map-wrap"><div id="iranMap"></div></div>
+  </section>
+
+  <section id="browse">
+    <div class="toolbar">
+      <input id="searchBox" type="search" placeholder="جستجو...">
+      <select id="filterProvince"></select>
+      <select id="filterCreature"></select>
+      <select id="seasonSel" title="season" aria-label="season">
+        <option value="auto" data-i18n="seasonAuto">خودکار</option>
+        <option value="none" data-i18n="seasonNone">بدون جلوه</option>
+        <option value="yalda" data-i18n="seasonYalda">شب یلدا</option>
+        <option value="nowruz" data-i18n="seasonNowruz">نوروز</option>
+      </select>
+    </div>
+    <div class="sortbar">
+      <span class="lbl" data-i18n="sortBy">مرتب‌سازی:</span>
+      <span class="seg" id="sortSeg">
+        <button data-sort="new">جدیدترین</button>
+        <button data-sort="popular">پربازدیدترین</button>
+        <button data-sort="az">الفبایی</button>
+      </span>
+      <span class="spacer"></span>
+      <span class="count-badge" id="countBadge"></span>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner"><span data-i18n="footer"></span></div></footer>
+<script type="module" src="assets/js/app.js"></script>
+<script src="assets/js/tilt.js" defer></script>
+</body>
+</html>

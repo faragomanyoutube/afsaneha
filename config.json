@@ -1,0 +1,21 @@
+{
+  "siteName": "افسانه‌ها",
+  "siteUrl": "https://faragomanyoutube.github.io/afsaneha",
+  "submitApiUrl": "",
+  "viewsApiUrl": "",
+  "turnstileSiteKey": "",
+  "giscus": {
+    "enabled": false,
+    "repo": "",
+    "repoId": "",
+    "category": "Announcements",
+    "categoryId": ""
+  },
+  "_help": {
+    "siteUrl": "آدرس نهایی سایت (بدون اسلش انتها). برای SEO و کارت اشتراک‌گذاری و RSS استفاده می‌شود.",
+    "submitApiUrl": "آدرس Cloudflare Worker برای ثبت افسانه (پوشه‌ی worker/). مثلاً https://afsaneha-bot.USERNAME.workers.dev/submit",
+    "viewsApiUrl": "اختیاری: آدرس شمارنده‌ی بازدید (KV روی Worker). اگر خالی باشد، بازدید محلی (مرورگر) شمرده می‌شود.",
+    "turnstileSiteKey": "کلید عمومی Cloudflare Turnstile (کپچا). اختیاری.",
+    "giscus": "برای فعال‌کردن نظرات: از giscus.app مقادیر repo/repoId/categoryId را بگیر و enabled را true کن."
+  }
+}

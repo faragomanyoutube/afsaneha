@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>درباره — افسانه‌ها</title>
+<meta name="description" content="درباره‌ی پروژه‌ی افسانه‌ها">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#2a0e1f">
+<link rel="alternate" type="application/rss+xml" title="افسانه‌ها" href="feed.xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo-amber.png" alt="افسانه‌ها"><span data-i18n="site">افسانه‌ها</span></a>
+  <div class="spacer"></div>
+  <a class="btn" href="contribute.html" data-i18n="contribute">ثبت افسانه‌ی جدید</a>
+  <button class="btn" id="langBtn">EN</button><button class="btn" id="themeBtn" title="theme">◐</button>
+</div></header>
+<main class="container">
+  <h1 data-i18n="aboutTitle">درباره‌ی افسانه‌ها</h1>
+  <div class="body" style="max-width:720px">
+    <p data-i18n="aboutP1"></p>
+    <p data-i18n="aboutP2"></p>
+    <p data-i18n="aboutP3"></p>
+  </div>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><span data-i18n="footer"></span></div></footer>
+<script type="module">import {applyI18n} from "./assets/js/i18n.js"; applyI18n();
+  const t=document.getElementById("themeBtn"); const l=document.getElementById("langBtn");
+  const set=k=>document.documentElement.setAttribute("data-theme",k);
+  set(localStorage.getItem("afsaneha_theme")||"dark");
+  t&&t.addEventListener("click",()=>{const n=document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";set(n);localStorage.setItem("afsaneha_theme",n);});
+  l&&l.addEventListener("click",()=>{const n=(localStorage.getItem("afsaneha_lang")||"fa")==="fa"?"en":"fa";localStorage.setItem("afsaneha_lang",n);location.reload();});
+</script>
+</body>
+</html>

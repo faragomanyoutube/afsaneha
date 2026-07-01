@@ -1,0 +1,13 @@
+{
+  "name": "افسانه‌ها — Afsaneha",
+  "short_name": "افسانه‌ها",
+  "description": "گنجینه‌ی مردمی افسانه‌ها و قصه‌های محلی ایران",
+  "lang": "fa", "dir": "rtl",
+  "start_url": "./index.html", "scope": "./",
+  "display": "standalone",
+  "background_color": "#2a0e1f", "theme_color": "#2a0e1f",
+  "icons": [
+    { "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
