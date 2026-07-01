@@ -164,3 +164,25 @@ body::before{ background-attachment:fixed; }
   .hero img.logo{ animation:none }
   .card{ transition:box-shadow .2s, border-color .2s }
 }
+
+/* ============ background polish (source image untouched — CSS overlays only) ============ */
+/* soften the low-res map so pixelation reads as an intentional soft backdrop */
+body::before{
+  filter:saturate(.95) blur(1.4px);
+  transform:scale(1.06);            /* hides the blur's transparent edge halo */
+  opacity:.2;
+}
+/* ambient light + theme-aware vignette + fine grain, above the map, below content */
+body::after{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/></svg>"),
+    radial-gradient(60% 45% at 50% 20%, color-mix(in srgb,var(--accent) 22%,transparent), transparent 68%),
+    radial-gradient(55% 45% at 82% 82%, color-mix(in srgb,var(--accent2) 18%,transparent), transparent 72%),
+    radial-gradient(125% 95% at 50% 48%, transparent 50%, var(--bg) 118%);
+  background-size:140px 140px, cover, cover, cover;
+  background-repeat:repeat, no-repeat, no-repeat, no-repeat;
+}
+/* a touch more depth on hero text so it lifts off the softened backdrop */
+.hero h1{ text-shadow:0 2px 18px rgba(0,0,0,.35) }
+[data-theme="light"] .hero h1{ text-shadow:0 2px 14px rgba(60,40,20,.18) }
