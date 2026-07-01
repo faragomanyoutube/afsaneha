@@ -273,3 +273,90 @@ body.reading .reading-exit{ display:inline-flex }
   .map-head h2{ font-size:1.2rem }
   .prov-label{ font-size:13px }
 }
+
+/* ============================================================
+   ریسپانسیو موبایل — mobile responsive pass
+   ============================================================ */
+
+/* header: اجازه‌ی شکست خط + دکمه‌های جمع‌وجور در صفحه‌ی کوچک */
+@media (max-width:820px){
+  .header-inner{ height:auto; min-height:60px; flex-wrap:wrap; row-gap:8px; padding:10px 0 }
+  .header-inner .spacer{ order:-1; flex-basis:100%; height:0 }
+  .brand{ font-size:18px }
+  .brand img,.brand-logo{ width:32px; height:32px }
+  .site-header .btn{ padding:7px 11px; font-size:14px }
+}
+
+@media (max-width:640px){
+  html{ -webkit-text-size-adjust:100% }
+  .container{ padding:0 14px }
+
+  /* header در موبایل: نوار دکمه‌ها قابل اسکرول افقی */
+  .header-inner{ flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none; gap:8px; padding:10px 0 }
+  .header-inner::-webkit-scrollbar{ display:none }
+  .header-inner .spacer{ display:none }
+  .brand{ position:sticky; inset-inline-start:0; flex:0 0 auto }
+  .site-header .btn{ flex:0 0 auto; white-space:nowrap; padding:7px 12px; font-size:13px }
+
+  /* hero */
+  .hero{ padding:34px 14px 22px }
+  .hero h1{ font-size:28px }
+  .hero p,.hero .tagline,.hero .hero-text{ font-size:15px }
+  .hero img.logo{ width:74px; height:74px }
+  .hero .cta,.hero-cta{ gap:8px }
+  .hero .btn,.hero-cta .btn{ flex:1 1 auto; text-align:center }
+
+  /* ابزارهای فیلتر: تمام‌عرض */
+  .toolbar{ gap:8px; margin:16px 0 8px }
+  .toolbar input,.toolbar select{ flex:1 1 100%; width:100%; min-width:0 }
+  #seasonSel{ flex:1 1 100% }
+
+  /* مرتب‌سازی */
+  .sortbar{ gap:6px }
+  .sortbar .spacer{ display:none }
+  .count-badge{ flex-basis:100%; margin-top:2px }
+  .seg{ width:100%; justify-content:space-between }
+  .seg button{ flex:1 1 0; padding:8px 6px; font-size:13px; text-align:center }
+
+  /* گرید تک‌ستونی */
+  .grid{ grid-template-columns:1fr; gap:14px; margin:18px 0 44px; perspective:none }
+  .card{ transform:none !important }
+
+  /* نقشه */
+  .map-section{ margin:18px 0 4px }
+  .map-head h2{ font-size:1.15rem }
+  .map-head .hint{ font-size:.8rem }
+  .map-wrap{ padding:2px }
+  .prov-label{ font-size:14px }
+  .prov-count{ font-size:11px }
+
+  /* مقاله/افسانه */
+  .article{ padding:18px 4px }
+  .body{ font-size:1.02rem; line-height:1.95 }
+  body.reading .body{ font-size:1.14rem; line-height:2 }
+  .legend-toolbar{ gap:6px }
+  .legend-toolbar .btn,.read-time{ font-size:13px }
+
+  /* منوی اشتراک‌گذاری در موبایل: تمام‌عرض پایین */
+  .share-menu{ position:fixed; inset-inline:12px; inset-block-end:12px; top:auto; min-width:0; width:auto }
+  .share.open .share-menu{ display:block }
+
+  /* صدا و مشارکت‌کنندگان */
+  .audio-block{ padding:12px }
+  .contrib-grid{ grid-template-columns:1fr; gap:10px }
+  .related .grid{ grid-template-columns:1fr }
+
+  /* فرم مشارکت */
+  .contrib-form{ display:grid; grid-template-columns:1fr; gap:12px }
+  .contrib-form .full{ grid-column:1 }
+
+  /* دکمه‌ی خروج از حالت مطالعه */
+  .reading-exit{ inset-block-start:10px; inset-inline-end:10px }
+}
+
+@media (max-width:400px){
+  .hero h1{ font-size:24px }
+  .site-header .btn{ padding:6px 10px; font-size:12px }
+  .seg button{ font-size:12px }
+}
